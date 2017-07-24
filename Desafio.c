@@ -25,20 +25,21 @@ int main()
 
     if (divisao==0)
     {
-        printf("Você é tímido!");
+        printf("VocÃª Ã© tÃ­mido!");
     } else if (divisao==1)
     {
-        printf("Você é sonhador!");
+        printf("VocÃª Ã© sonhador!");
     } else if (divisao==2)
     {
-        printf("Você é paquerador!");
+        printf("VocÃª Ã© paquerador!");
     } else if (divisao==3)
     {
-        printf("Você é atraente!");
+        printf("VocÃª Ã© atraente!");
     } else
     {
-        printf("Você é irresistível!");
+        printf("VocÃª Ã© irresistÃ­vel!");
     }
+    printf("\n");
     system("pause");
 
 }
