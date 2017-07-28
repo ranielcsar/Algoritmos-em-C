@@ -16,12 +16,12 @@ int main()
     scanf("%d/%d/%d",&dia,&mes,&ano);
     printf("\n");
 
-    cMesDia=(dia*100)+mes;
-    cAno=cMesDia+ano;
-    resto1=cAno%100;
-    resto2=cAno/100;
-    soma=resto1+resto2;
-    divisao=soma%5;
+    cMesDia=(dia*100)+mes; //Adiciona mais dois digitos ao número pra depois somar com o mês (11*100 = 1100) + mês (1111)
+    cAno=cMesDia+ano; //Pega o total da conta acima e soma com o ano (1111+1111=2222)
+    resto1=cAno%100; //O resto da divisão por 100, retira os dois últimos números
+    resto2=cAno/100; //A divisão por 100, retira os dois primeiros
+    soma=resto1+resto2; //Aqui soma os dois resultados acima
+    divisao=soma%5; //O resto da divisão da soma é o resultado final
 
     if (divisao==0)
     {
