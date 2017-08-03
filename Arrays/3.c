@@ -1,15 +1,15 @@
-/* Maior e menor número. */
+/* Maior e menor nÃºmero. */
 
 #include <stdio.h>
 #include <math.h>
 
 int main()
 {
-   int num[10],i,maior=0,menor=0;
+   int num[10],i,maior,menor;
 
    printf("Entre com 10 valores inteiros:\n");
 
-   for (i=0;i<5;i++)
+   for (i=0;i<10;i++)
    {
       printf("%do valor: ",i+1);
       scanf("%d",&num[i]);
@@ -27,7 +27,7 @@ int main()
          menor=num[i];
       }
    }
-   printf("Maior número: %d\n",maior);
-   printf("Menor número: %d",menor);
+   printf("Maior nÃºmero: %d\n",maior);
+   printf("Menor nÃºmero: %d",menor);
 
 }
