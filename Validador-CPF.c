@@ -11,10 +11,10 @@ int main()
     int mPdigito,sPdigito,diviP,pDigi; //Váriaveis usadas para validação do 1º digito
     int mSdigito,sSdigito,diviS,sDigi; //Váriaveis usadas para validação do 2º digito
     int p=10,s=11,i; //contadoras
-    
+
     printf("Entre com seu CPF (11111111111): ");
     scanf("%s",cpf);
-    
+
     for (i=0; i<strlen(cpf);i++)
     {
         icpf[i]=cpf[i] - '0'; //converte char em int
@@ -35,25 +35,22 @@ int main()
     pDigi=11-diviP;
     diviS=sSdigito%11;
     sDigi=11-diviS;
-    
-    if (pDigi<2)
+
+    if (diviS<2)
     {
         pDigi=0;
     }
-    if (sDigi<2)
+    if (diviP<2)
     {
         sDigi=0;
     }
-    
+
     if ((pDigi==icpf[9]) && (sDigi==icpf[10]))
     {
         printf("CPF Válido!\n");
-    } else 
+    } else
     {
         printf("CPF inválido!\n");
     }
-    
     system("pause");
-
 }
-
