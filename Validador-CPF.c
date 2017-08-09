@@ -45,12 +45,14 @@ int main()
         sDigi=0;
     }
 
-    if ((pDigi==icpf[10]) && (sDigi==icpf[11]))
+    if ((pDigi==icpf[9]) && (sDigi==icpf[10]) || (pDigi==icpf[10]) && (sDigi==icpf[11]))
     {
         printf("CPF Válido!\n");
     } else
     {
         printf("CPF inválido!\n");
     }
+
     system("pause");
+
 }
