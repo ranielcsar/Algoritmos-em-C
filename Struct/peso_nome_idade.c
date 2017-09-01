@@ -77,6 +77,3 @@ int main()
     } while (sair==1);
     
 }
-
-
-
