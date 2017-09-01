@@ -67,12 +67,7 @@ int main()
         printf("Deseja consultar outra pessoa?\n");
         printf("1. Sim\n");
         printf("2. Não\n");
-        scanf("%d",&sair);
-        
-        if (sair==2)
-        {
-            sair=0;
-        }
+        scanf("%d",&sair);      
         
     } while (sair==1);
     
