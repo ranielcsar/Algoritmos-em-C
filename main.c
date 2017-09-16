@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//Função que deixa o usuário determinar o tamanho do vetor
 void tamanhoVetor(int v)
 {
     int a[v],i;
