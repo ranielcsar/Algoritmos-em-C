@@ -2,7 +2,8 @@
 
 void tamanhoVetor(int v)
 {
-    int a[v],i;
+    int a[v]; //o parâmetro "v" recebe o número que o usuário digitar e atribui ao tamanho do vetor
+    int i;
     
     for (i=0;i<v;i++)
     {
