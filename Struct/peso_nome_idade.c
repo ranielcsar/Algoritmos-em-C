@@ -2,15 +2,16 @@
 #include <string.h>
 #include <locale.h>
 
+typedef struct
+{
+    char nome[100];
+    int idade;
+    float altura, peso;
+}pessoa;
+
 int main()
 {
-    setlocale(LC_ALL,"portuguese");
-    typedef struct
-    {
-        char nome[30];
-        int idade;
-        float altura, peso;
-    }pessoa;
+    setlocale(LC_ALL,"");
     
     pessoa p[5];
     char nome[30];
@@ -20,7 +21,7 @@ int main()
     for (i=0;i<5;i++)
     {
         printf("%da pessoa: ",i+1);
-        scanf("%s",p[i].nome);
+        scanf(" %[^\n]s",p[i].nome);
     }
     printf("\n");
     printf("Entre com as idades:\n");
