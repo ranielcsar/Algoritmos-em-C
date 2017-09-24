@@ -122,7 +122,7 @@ void mostraRank()
 	printf("%*s",16," ");
 	printf("************************************************\n\n");
 		
-	printf("\t\t    Jogador        VitÛrias        Derrotas\n\n");
+	printf("\t\t    Jogador        Vit√≥rias        Derrotas\n\n");
 		
 	while(fscanf(rank,"%s %d %d\n",nome,&vit,&der)!=EOF)
 	{
@@ -141,7 +141,7 @@ void mostraRank()
 	system("cls");	
 }
 
-void intro() //FunÁ„o de introduÁ„o
+void intro() //Fun√ß√£o de introdu√ß√£o
 {
 	printf("*********************************************************\
 			*********************************************************\
@@ -164,7 +164,7 @@ void intro() //FunÁ„o de introduÁ„o
 			*********************************************************\
 			*********************************************************\
 			*********************************************************\n\n");
-	printf("VocÍ perde quando a quantidade de erros chegar em 6.\n\n");
+	printf("Voc√™ perde quando a quantidade de erros chegar em 6.\n\n");
 	printf("Digite letra por letra.\n\n");
 	printf("Letra repetida conta como erro!\n\n");
 	system("pause");
@@ -181,7 +181,7 @@ void menuTemas()
 	printf("2. Frutas\n");
 }
 
-char* buscaPalavra(FILE* arq) //FunÁ„o que pega palavra aleatÛria do arquivo desejado
+char* buscaPalavra(FILE* arq) //Fun√ß√£o que pega palavra aleat√≥ria do arquivo desejado
 {
 	char nome[20],*nomeCopia[20],palavraRandom[20];
 	int i=0,x;
@@ -189,7 +189,7 @@ char* buscaPalavra(FILE* arq) //FunÁ„o que pega palavra aleatÛria do arquivo des
 
 	if (arq==NULL)
 	{
-		printf("Erro. Arquivo n„o encontrado!\n");
+		printf("Erro. Arquivo n√£o encontrado!\n");
 	}
 	else
 	{
@@ -202,12 +202,12 @@ char* buscaPalavra(FILE* arq) //FunÁ„o que pega palavra aleatÛria do arquivo des
 	
 	fclose(arq);
 	srand((unsigned)time(NULL));
-	x=rand()%15; //N˙mero aleatÛria para ser usado no Ìndice
-	strcpy(palavraRandom,nomeCopia[x]); //Copia um nome, na posiÁ„o [x] do vetor, para "palavraRandom"
-	return(palavraRandom); //Retorna palavra aleatÛria
+	x=rand()%15; //N√∫mero aleat√≥ria para ser usado no √≠ndice
+	strcpy(palavraRandom,nomeCopia[x]); //Copia um nome, na posi√ß√£o [x] do vetor, para "palavraRandom"
+	return(palavraRandom); //Retorna palavra aleat√≥ria
 }
 
-void boneco(int a) //FunÁ„o usada para mostrar o "desenho" da forca e do boneco
+void boneco(int a) //Fun√ß√£o usada para mostrar o "desenho" da forca e do boneco
 {
 	switch (a)
 	{
@@ -323,7 +323,7 @@ void boneco(int a) //FunÁ„o usada para mostrar o "desenho" da forca e do boneco
 void cred()
 {
 	printf("###############################\n");
-	printf("> Desenvolvido por Raniel CÈsar\n");
+	printf("> Desenvolvido por Raniel C√©sar\n");
 	printf("###############################\n\n");
 	system("pause");
 }
@@ -342,7 +342,7 @@ int main()
 	
 	if (rank==NULL)
 	{
-		printf("Arquivo n„o encontrado!\n");
+		printf("Arquivo n√£o encontrado!\n");
 	}	
 		
 	load();
@@ -368,7 +368,7 @@ int main()
 	
 	do
 	{
-		//Inicia as vari·veis e, caso o jogador queira jogar novamente, zera todas
+		//Inicia as vari√°veis e, caso o jogador queira jogar novamente, zera todas
 		numErros=0;
 		numLetras=0;
 		contaAcertos=0;
@@ -382,7 +382,7 @@ int main()
 					
 			if (opcaoTemas>2)
 			{
-				printf("OpÁ„o inv·lida! Tente novamente >\n\n");			
+				printf("Op√ß√£o inv√°lida! Tente novamente >\n\n");			
 			}		
 		} while (opcaoTemas>2);
 		
@@ -399,16 +399,16 @@ int main()
 			strcpy(palavra,buscaPalavra(arq));
 		}
 		system("cls");
-		fflush(stdin); //Limpa memÛria tempor·ria
+		fflush(stdin); //Limpa mem√≥ria tempor√°ria
 		
-		/* O fflush(stdin) foi usado pois, quando a vari·vel "palavra" recebe a "palavraRandom" da funÁ„o buscaPalavra,
-			vem com um "\n" no final, o que acaba ocasionando um bug em que a vari·vel "letra" recebe \n e, quando
-			o loop verifica as letras, conta como erro. Por isso foi necess·rio limpar o buffer.*/
+		/* O fflush(stdin) foi usado pois, quando a vari√°vel "palavra" recebe a "palavraRandom" da fun√ß√£o buscaPalavra,
+			vem com um "\n" no final, o que acaba ocasionando um bug em que a vari√°vel "letra" recebe \n e, quando
+			o loop verifica as letras, conta como erro. Por isso foi necess√°rio limpar o buffer.*/
 		
-		numLetras=strlen(palavra)-1; /*Conta o total de letras na palavra (o -1 È pra n„o contar o \n).
-		 							   Mesmo depois da "limpeza" no buffer, o \n ainda È contado*/
+		numLetras=strlen(palavra)-1; /*Conta o total de letras na palavra (o -1 √© pra n√£o contar o \n).
+		 							   Mesmo depois da "limpeza" no buffer, o \n ainda √© contado*/
 		
-		//Adiciona espaÁo em branco nos vetores para evitar caracteres estranhos durante a execuÁ„o
+		//Adiciona espa√ßo em branco nos vetores para evitar caracteres estranhos durante a execu√ß√£o
 		for (i=0; i<numLetras; i++)
 		{
 			pFinal[i]=' ';
@@ -425,7 +425,7 @@ int main()
 			}
 		}
 		
-		printf("%*s",25-numLetras," "); //Usado para manipular a tabulaÁ„o do printf abaixo 25 espaÁos - numÈro de letras da pakavra
+		printf("%*s",25-numLetras," "); //Usado para manipular a tabula√ß√£o do printf abaixo. 25 espa√ßos - num√©ro de letras da pakavra
 		printf("Letras usadas: ");
 		for (i=0; i<contaLetras; i++)
 		{
@@ -436,11 +436,11 @@ int main()
 		while (win==0)
 		{
 			printf("\n");		
-			printf("Erros: %d\t\t N˙mero de letras da palavra: %d\n\n",numErros,numLetras);
+			printf("Erros: %d\t\t N√∫mero de letras da palavra: %d\n\n",numErros,numLetras);
 			boneco(numErros);
 			printf("Letra: ");						
 			
-			//Loop usado para ler outra letra, caso a mesma seja igual a alguma j· usada			
+			//Loop usado para ler outra letra, caso a mesma seja igual a alguma j√° usada			
 			do
 			{	
 				scanf("%c",&letra);
@@ -449,14 +449,14 @@ int main()
 				verificaLetra=0;
 				letraRep=0;																	
 				
-				//Verifica se a letra j· foi usada
+				//Verifica se a letra j√° foi usada
 				if (contaLetras>0)
 				{
 					for (i=0; i<contaLetras; i++)
 					{
 						if (letra==letraUsada[i])
 						{
-							printf("Esta letra j· foi usada! Tente novamente.");
+							printf("Esta letra j√° foi usada! Tente novamente.");
 							verificaLetra=1;
 							numErros++;
 							sleep(2);
@@ -476,7 +476,7 @@ int main()
 									
 			} while (verificaLetra!=0);			
 			
-			//Guarda as letras usadas no vetor e, se for a mesma letra, n„o guarda
+			//Guarda as letras usadas no vetor e, se for a mesma letra, n√£o guarda
 			if (letra!=letraUsada[i])
 			{
 				for (i=0; i<contaLetras; i++)
@@ -497,7 +497,7 @@ int main()
 			}			
 			letraRep=0;
 			
-			contaLetras++; //Vari·vel que conta quantas letras foram digitadas				
+			contaLetras++; //Vari√°vel que conta quantas letras foram digitadas				
 	
 			fflush(stdin);
 			verificaErro=0;
@@ -532,7 +532,7 @@ int main()
 			system("cls");
 			printf("\n\n");
 			
-			printf("Palavra: "); //Palavra que ser· encontrada			
+			printf("Palavra: "); //Palavra que ser√° encontrada			
 			for (i=0; i<numLetras; i++)
 			{
 				if (pFinal[i]==' ')
@@ -545,7 +545,7 @@ int main()
 			}
 			
 			printf("%*s",25-numLetras," ");
-			printf("Letras usadas: "); //Mostra as letras que o usu·rio digitou
+			printf("Letras usadas: "); //Mostra as letras que o usu√°rio digitou
 			for (i=0; i<contaLetras; i++)
 			{
 				if (letraUsada[i]==' ')
@@ -573,20 +573,20 @@ int main()
 		if (win==1)
 		{
 			boneco(6);
-			printf("VocÍ perdeu, %s :'(\n\n",nome);
+			printf("Voc√™ perdeu, %s :'(\n\n",nome);
 			printf("A palavra era: %s\n",palavra);			
 		}
 		
 		if (win==2)
 		{
 			boneco(7);
-			printf("ParabÈns, %s! VocÍ ganhou! \\o/\n\n",nome);
+			printf("Parab√©ns, %s! Voc√™ ganhou! \\o/\n\n",nome);
 			printf("Total de erros: %d\n\n",numErros);					
 		}
 		
 		printf("Deseja jogar novamente?\n");
 		printf("1. Sim\n");
-		printf("2. N„o\n");
+		printf("2. N√£o\n");
 		scanf("%d",&sair);
 		printf("\n");	
 		
