@@ -5,9 +5,9 @@
 
 int validaCPF(char cpf[])
 {
-	int icpf[15];
-    int mPdigito,sPdigito=0,diviP,pDigi; //Váriaveis usadas para validação do 1º digito
-    int mSdigito,sSdigito=0,diviS,sDigi; //Váriaveis usadas para validação do 2º digito
+    int icpf[15];
+    int mPdigito,sPdigito=0,diviP,pDigi; //VÃ¡riaveis usadas para validaÃ§Ã£o do 1Âº digito
+    int mSdigito,sSdigito=0,diviS,sDigi; //VÃ¡riaveis usadas para validaÃ§Ã£o do 2Âº digito
     int p=10,s=11,i; //contadoras    
 
     for (i=0; i<strlen(cpf);i++)
@@ -21,8 +21,8 @@ int validaCPF(char cpf[])
 
         if (p>1)
         {
-            mPdigito=icpf[i]*p; //multiplicação de cada número do cpf
-            sPdigito+=mPdigito; //soma de todos os resultados do cálculo acima
+            mPdigito=icpf[i]*p; //multiplicaÃ§Ã£o de cada nÃºmero do cpf
+            sPdigito+=mPdigito; //soma de todos os resultados do cÃ¡lculo acima
             p--;
         }
         if (s>1)
@@ -60,19 +60,19 @@ int main()
 {
     setlocale(LC_ALL,"");
     char cpf[15];
-	int valida;    
+    int valida;    
 
     printf("Entre com seu CPF (111.111.111-11): ");
     scanf("%s",cpf);    
     
-	valida=validaCPF(cpf);
+    valida=validaCPF(cpf);
     
     if (valida==0)
     {
-    	printf("CPF válido.\n\n");
+    	printf("CPF vÃ¡lido.\n\n");
 	} else
 	{
-		printf("CPF inválido.\n\n");
+		printf("CPF invÃ¡lido.\n\n");
 	}
 	    
     system("pause");
