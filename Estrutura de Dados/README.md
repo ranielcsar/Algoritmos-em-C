@@ -1,1 +1,3 @@
-# Estrutura-de-Dados
+# Estrutura de Dados
+
+o 2º semestre começa aqui ;)
