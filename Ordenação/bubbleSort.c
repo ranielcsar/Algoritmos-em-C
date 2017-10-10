@@ -11,9 +11,9 @@ void ordenacaoBolha(int num[], int x) //Bubble sort
 		{
 			if (num[i] > num[j])
 			{
-				troca=num[i]; //Guarda o valor de i que é maior que j para ser trocado
-				num[i]=num[j]; //"num", na posição i, recebe o "num" da posição j
-				num[j]=troca; //o número guardado passado para a posição do num[j]									
+				troca=num[i]; //Guarda o valor de i que Ã© maior que j para ser trocado
+				num[i]=num[j]; //"num", na posiÃ§Ã£o i, recebe o "num" da posiÃ§Ã£o j
+				num[j]=troca; //o nÃºmero guardado passa para a posiÃ§Ã£o do num[j]									
 			}
 		}
 		printf("%d ",num[i]);
@@ -26,14 +26,14 @@ int main()
 	int i,num[50];
 	int qntNumeros;
 	
-	printf("Quantos números quer ordenar?\n");
+	printf("Quantos nÃºmeros quer ordenar?\n");
 	printf("> ");
 	scanf("%d",&qntNumeros);
 	printf("\n\n");
 	
 	srand(time(NULL));
 	
-	printf("Números desordenados > ");
+	printf("NÃºmeros desordenados > ");
 	for (i=0;i<qntNumeros;i++)
 	{
 		num[i]=rand()%20;
