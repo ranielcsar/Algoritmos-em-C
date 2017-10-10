@@ -11,7 +11,7 @@ void ordenacaoBolha(int num[], int x) //Bubble sort
 		{
 			if (num[i] > num[j])
 			{
-				troca=num[i]; //Guarda o valor de i que é maior que j para ser trocado
+				troca=num[i]; //Guarda o valor de i, que é maior que j, para ser trocado
 				num[i]=num[j]; //"num", na posição i, recebe o "num" da posição j
 				num[j]=troca; //o número guardado passa para a posição do num[j]									
 			}
