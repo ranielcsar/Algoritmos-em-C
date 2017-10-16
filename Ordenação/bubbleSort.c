@@ -1,13 +1,14 @@
 #include <stdio.h>
-#include <locale.h>
 #include <stdlib.h>
+#include <locale.h>
 
-void ordenacaoBolha(int num[], int x) //Bubble sort
+int* ordenacaoBolha(int num[]) //Bubble sort
 {
 	int i, j, troca;
+	static int x[30];
 	
-	for (i=0;i<x;i++){
-		for (j=i+1;j<x;j++)
+	for (i=0;i<10;i++){
+		for (j=i+1;j<10;j++)
 		{
 			if (num[i] > num[j])
 			{
@@ -16,31 +17,36 @@ void ordenacaoBolha(int num[], int x) //Bubble sort
 				num[j]=troca; //o número guardado passa para a posição do num[j]									
 			}
 		}
-		printf("%d ",num[i]);
-	}	
+		x[i]=num[i];
+	}
+	
+	return x;	
 }
 
 int main()
 {
 	setlocale(LC_ALL,"");
-	int i,num[50];
-	int qntNumeros;
-	
-	printf("Quantos números quer ordenar?\n");
-	printf("> ");
-	scanf("%d",&qntNumeros);
-	printf("\n\n");
+	int i, num[10];
+	int *bubble;
 	
 	srand(time(NULL));
 	
 	printf("Números desordenados > ");
-	for (i=0;i<qntNumeros;i++)
+	
+	for (i=0; i<10; i++)
 	{
-		num[i]=rand()%20;
-		printf("%d ",num[i]);	
+		num[i]=rand()%10;
+		printf("%d ",num[i]);
 	}
-	printf("\n\n");	
-	printf("Ordenados > ");
-	ordenacaoBolha(num,qntNumeros);	
-		
+	printf("\n\n");
+	
+	printf("Números ordenados > ");
+	
+	bubble=ordenacaoBolha(num);
+	
+	for (i=0; i<10; i++)
+	{
+		printf("%d ", *(bubble + i));
+	}
+	
 }
