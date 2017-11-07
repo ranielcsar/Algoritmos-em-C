@@ -1,0 +1,22 @@
+questão 1: 4
+
+questão 2:
+a) void main()
+{
+	int x,*p;
+	x=100;
+	p= &x; < correção
+	printf...
+}
+
+b)
+void troca (int *i, int *j) 
+{
+	int *temp;
+	
+	temp = i;
+	i = j;
+	j = temp;
+}
+
+c) não precisou de correção
