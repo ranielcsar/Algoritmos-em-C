@@ -6,17 +6,21 @@ void maximoMinimo(int *v, int N, int *maximo, int *minimo)
 {
 	int i;
 	
-	printf("Valores do vetor > ");
+	*maximo= v[0];
+	*minimo= v[0];
 	
 	for (i=0; i<N; i++)
-	{
-		printf("%d ",v[i]);
+	 {
+		if (v[i] > *maximo)
+		{
+			*maximo= v[i];
+		}
+		
+		if (v[i] < *minimo)
+		{
+			*minimo= v[i];
+		}
 	}
-	printf("\n");
-	
-	printf("Número de elementos: %d\n", N);
-	printf("Valor máximo: %d\n", *maximo);
-	printf("Valor mínimo: %d\n\n", *minimo);
 }
 
 int main()
@@ -29,27 +33,20 @@ int main()
 	 
 	 printf("Quantos números deseja adicionar?\n");
 	 scanf("%d", &num);
+	 printf("\n\n");
+	 
+	 printf("Valores sorteados > ");
 	 
 	 for (i=0; i<num; i++)
 	 {
-	 		vetor[i]= rand()%31;
-	 		
-	 		if (i==0)
-	 		{
-	 			menor= vetor[i];
-			}
-	 		
-	 		if (vetor[i] > maior)
-	 		{
-	 			maior= vetor[i];
-			}
-			
-			if (vetor[i] < menor)
-			{
-				menor= vetor[i];
-			}
-	 }
+	 	vetor[i]= rand()%50;
+	 	printf("%d ", vetor[i]);
+	 }	 
+	 
 	 printf("\n\n");
-	 maximoMinimo(&vetor, num, &maior, &menor);    
+	 maximoMinimo(vetor, num, &maior, &menor);
+	 
+	 printf("Maior valor: %d\n", maior);
+	 printf("Menor valor: %d\n", menor);    
     
 }
