@@ -1,3 +1,7 @@
+/* 
+   Design original por: jgs
+*/
+
 #include <stdio.h>
 
 main() {
