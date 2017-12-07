@@ -20,7 +20,7 @@ void inserir(Fila *f) {
 	
    if (f->fim > X-1)
    {
-   	printf("Pilha cheia! \n");
+   	printf("Fila cheia! \n");
    } else
    {
 		f-> fim++;
