@@ -18,6 +18,13 @@ void iniciaFila(Fila *f) {
 
 void inserir(Fila *f) {
 	
+   //Falso cheio
+   if ((f->fim == X-1) && (f->comeco == f->fim-2))
+   {
+      f-> comeco= 0;
+      f-> fim= -1;
+   }
+	
    if (f->fim > X-1)
    {
    	printf("Fila cheia! \n");
