@@ -15,24 +15,25 @@ void coffeeLoad() {
             printf("\n");
          }
          
-   	   if (i==0)
-   	   {
-   		   printf("                                    (( \n");
-   		   printf("                                     )) \n");
-   		   printf("                                    |~~| \n");
-   		   printf("                                   C|__| \n\n");
-   		   printf("                               > CARREGANDO < \n");
-   	   } else
-   	   {
-   	   	printf("                                      )) \n");
-   		   printf("                                     (( \n");
-   		   printf("                                    |~~| \n");
-   		   printf("                                   C|__| \n\n");
-   		   printf("                               > CARREGANDO < \n");
-   	   }
+   	 if (i==0)
+   	 {
+   	    printf("                                    (( \n");
+   	    printf("                                     )) \n");
+   	    printf("                                    |~~| \n");
+   	    printf("                                   C|__| \n\n");
+   	    printf("                               > CARREGANDO < \n");
+   	 } else
+   	 {
+   	    printf("                                      )) \n");
+   	    printf("                                     (( \n");
+   	    printf("                                    |~~| \n");
+   	    printf("                                   C|__| \n\n");
+   	    printf("                               > CARREGANDO < \n");
+   	 }
    		
-   		sleep(0.9);   		
-         if (x < 10)
+   	sleep(0.9);
+	      
+        if (x < 10)
       	{
       	   system("cls");
       	}
@@ -40,8 +41,7 @@ void coffeeLoad() {
       
       x++;      
       
-   } while (x < 7);
-	
+   } while (x < 7);	
 }
 
 main()
