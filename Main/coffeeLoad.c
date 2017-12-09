@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define t 30
 
 void coffeeLoad() {
 	
