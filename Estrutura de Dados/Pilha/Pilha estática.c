@@ -32,7 +32,7 @@ void mostraPilha (pilha *p)
 	{
 		for (i=0;i<x;i++)
 		{
-			printf("%dª nota: %.1f\n", i+1, p->nota[i]);
+			printf("%dÂª nota: %.1f\n", i+1, p->nota[i]);
 		}
 	}		
 	printf("\n\n");
@@ -62,14 +62,14 @@ void preenchePilha (pilha *p, float valor)
 {
 	int i;
 		
-	for (i=p->topo; i<p->topo+1 ;i++) //Loop usado para adicionar elemento de onde parou e não substituir
-	{								 //um elemento já guardado
+	for (i=p->topo; i<p->topo+1 ;i++) //Loop usado para adicionar elemento de onde parou e nÃ£o substituir
+	{								 //um elemento jÃ¡ guardado
 		if (pilhaCheia(p)==false)
 		{
 			p->nota[i]= valor;	
 		}		
 	}
-	p->topo++; //Incrementa índice para mudar a posição	
+	p->topo++; //Incrementa Ã­ndice para mudar a posiÃ§Ã£o	
 }
 
 void esvaziaPilha (pilha *p)
@@ -90,7 +90,7 @@ void localizaNo(pilha *p)
 		if (valor == p->nota[i])
 		{
 			printf("Valor encontrado: %.1f\n", p->nota[i]);
-			printf("Posição: %d\n", p->topo);
+			printf("PosiÃ§Ã£o: %d\n", p->topo);
 		}
 	}
 }
@@ -100,7 +100,7 @@ void valorDoNo(pilha *p)
 	int i;
 	int posicao;
 	
-	printf("Entre com a posição do nó que deseja saber o valor: ");
+	printf("Entre com a posiÃ§Ã£o do nÃ³ que deseja saber o valor: ");
 	scanf("%d", &posicao);
 	
    printf("Valor encontrado: %.1f \n\n", p->nota[posicao-1]);
@@ -108,7 +108,7 @@ void valorDoNo(pilha *p)
 
 void mostraTopo(pilha *p)
 {
-	printf("Valor que está no topo: %.1f \n\n", p->nota[p->topo-1]);
+	printf("Valor que estÃ¡ no topo: %.1f \n\n", p->nota[p->topo-1]);
 }
 
 void maiorMenor(pilha *p)
@@ -140,7 +140,7 @@ void mostraPares(pilha *p)
 {
 	int i;
 	
-	printf("Valores das posições pares da pilha > ");
+	printf("Valores das posiÃ§Ãµes pares da pilha > ");
 	for (i=0; i<p->topo; i++)
 	{
 		if (i % 2 == 0)
@@ -174,13 +174,13 @@ void ordenar(pilha *p)
 int main()
 {
 	setlocale(LC_ALL,"");
-	pilha p; //váriavél usada para acessar a pilha na função main
+	pilha p; //vÃ¡riavÃ©l usada para acessar a pilha na funÃ§Ã£o main
 	float num;
 	int i;
 	int opcaoMenu,qntElementos;
 	
-	criaPilha(&p); /*Como as funções têm parametros de ponteiros, precisamos passar como referência
-					ou seja, passando o end. de memória da váriavel. Por isso usa-se o & */
+	criaPilha(&p); /*Como as funÃ§Ãµes tÃªm parametros de ponteiros, precisamos passar como referÃªncia
+					ou seja, passando o end. de memÃ³ria da vÃ¡riavel. Por isso usa-se o & */
 	
 	do
 	{
@@ -192,7 +192,7 @@ int main()
 		{
 			if (pilhaCheia(&p)==true)
 			{
-				printf("A pilha já está preenchida!\n");
+				printf("A pilha jÃ¡ estÃ¡ preenchida!\n");
 			} else
 			{
 				printf("Preencha com as notas!\n");
@@ -216,7 +216,7 @@ int main()
 		{
 			if (pilhaVazia(&p)==true)
 			{
-				printf("Não se pode esvaziar algo que já está vazio!\n");
+				printf("NÃ£o se pode esvaziar algo que jÃ¡ estÃ¡ vazio!\n");
 			} else
 			{
 				printf("Quantos elementos deseja retirar da pilha? > ");
@@ -283,11 +283,11 @@ void menu()
 	printf(" || 0 >   Empilhar                           || \n");
 	printf(" || 1 >   Desempilhar                        || \n");	
 	printf(" || 2 >   Exibir pilha                       || \n");
-	printf(" || 3 >   Localizar nó com determinado valor || \n");
-	printf(" || 4 >   Mostrar valor de um nó             || \n");
+	printf(" || 3 >   Localizar nÃ³ com determinado valor || \n");
+	printf(" || 4 >   Mostrar valor de um nÃ³             || \n");
 	printf(" || 5 >   Mostrar maior e menor valor        || \n");
 	printf(" || 6 >   Mostrar elemento do topo           || \n");
-	printf(" || 7 >   Mostrar posições pares             || \n");
+	printf(" || 7 >   Mostrar posiÃ§Ãµes pares             || \n");
 	printf(" || 8 >   Ordenar em ordem crescente         || \n");
 	printf(" || 9 >   Sair                               || \n");
 	printf(" ||__________________________________________|| \n");
