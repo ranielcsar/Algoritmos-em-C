@@ -37,8 +37,8 @@ Para chegarmos ao 4º elemento, por exemplo, devemos tirar de um por um até che
 ```C
 typedef struct
 {
-	int topo; // Esta variavel servirá como indíce [i]. Ela que vai ser incrementada ou decrementada.
-	int elementos[10]; //Vetor que irá guardar elementos
+   int topo; // Esta variavel servirá como indíce [i]. Ela que vai ser incrementada ou decrementada.
+   int elementos[10]; //Vetor que irá guardar elementos
 } pilha;
 ```
 
@@ -47,7 +47,7 @@ typedef struct
 ```C
 void criaPilha(pilha *p) //*p será o ponteiro que irá direcionar todas as funções para a struct "pilha"
 {
-	p->topo= 0; //Inicia a posição em 0
+   p->topo= 0; //Inicia a posição em 0
 }
 ```
 
@@ -89,6 +89,7 @@ void esvaziaPilha(pilha *p)
    {
       p-> topo--;
    }
+}
 ```
 
 - [Pilha](https://github.com/ranielcsar/Algoritmos-em-C/blob/master/Estrutura%20de%20Dados/Pilha/Pilha%20est%C3%A1tica.c "Código fonte")
