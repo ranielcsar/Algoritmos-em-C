@@ -20,6 +20,9 @@ No exemplo abaixo tem 5 números. Caso eu queria adicionar mais um, ele terá qu
 
 Para chegarmos ao 4º elemento, por exemplo, devemos tirar de um por um até chegar nele:
 
+1 | 2 | 3 | 4 | 5 | 6
+--- | --- | --- | --- | --- | ---
+
 1 | 2 | 3 | 4 | 5
 --- | --- | --- | --- | ---
 
