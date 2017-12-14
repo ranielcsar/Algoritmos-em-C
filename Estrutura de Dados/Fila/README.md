@@ -64,7 +64,7 @@ Na fila, existe uma condição a mais, que é a "falso cheio". (valeu @araujo21x
      for(i=auxInicio; i<=auxFim; i++) //Usado para reorganizar elementos
      {
          f-> fim++;
-         f-> elem[f-> fim] = f-> elementos[i];
+         f-> elementos[f-> fim] = f-> elementos[i];
      }
 }
 ```
