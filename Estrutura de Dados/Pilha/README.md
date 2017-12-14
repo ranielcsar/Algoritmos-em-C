@@ -86,3 +86,5 @@ void esvaziaPilha(pilha *p)
       p-> topo--;
    }
 ```
+
+- [Pilha](https://github.com/ranielcsar/Algoritmos-em-C/blob/master/Estrutura%20de%20Dados/Pilha/Pilha%20est%C3%A1tica.c "Código fonte")
