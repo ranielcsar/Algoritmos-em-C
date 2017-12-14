@@ -71,7 +71,8 @@ void preenchePilha(pilha *p, dado)
     } else
     {
         p->nota[p->topo]= dado; //no momento a variável topo é 0, então, será adicionado o elemento na posição 0.
-        p->topo++; //Incrementa índice para mudar a posição. Após isso, você terá uma nova posição para ser preenchida.	
+        p->topo++; /*Incrementa índice para mudar a posição.
+		   Após isso, você terá uma nova posição para ser preenchida.*/
     }
 }
 ```
