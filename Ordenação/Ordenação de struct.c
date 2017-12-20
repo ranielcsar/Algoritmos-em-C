@@ -48,7 +48,7 @@ void ordena(teste *t)
     }
 }
 
-int main()
+main()
 {
     srand(time(NULL));
     
