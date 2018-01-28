@@ -13,58 +13,49 @@ void load()
 			if (i==0)
 			{
 				printf("%*s",42," LOADING ");
-				sleep(0.9);
 			}
 			if (i==1)
 			{
 				printf("%*s",43,"< LOADING >");
-				sleep(0.9);
 			}
 			if (i==2)
 			{
 				printf("%*s",44,"<< LOADING >>");
-				sleep(0.9);
 			}
 			if (i==3)
 			{
 				printf("%*s",45,"<<< LOADING >>>");
-				sleep(0.9);
 			}
 			if (i==4)
 			{
 				printf("%*s",46,"<<<< LOADING >>>>");
-				sleep(0.9);
 			} 
 			if (i==5)
 			{
 				printf("%*s",47,"<<<<< LOADING >>>>>");
-				sleep(0.9);
 			}
 			if (i==6)
 			{
 				printf("%*s",46,"<<<< LOADING >>>>");
-				sleep(0.9);
 			}		
 			if (i==7)
 			{
 				printf("%*s",45,"<<< LOADING >>>");
-				sleep(0.9);
 			}		
 			if (i==8)
 			{
 				printf("%*s",44,"<< LOADING >>");
-				sleep(0.9);
 			}		
 			if (i==9)
 			{
 				printf("%*s",43,"< LOADING >");
-				sleep(0.9);
 			}		
 			if (i==10)
 			{
 				printf("%*s",42," LOADING ");
-				sleep(0.9);
-			}					
+			}
+			
+            sleep(0.9);
 			system("cls");					
 	}		
 }
@@ -77,6 +68,7 @@ void menuPrincipal()
 	{
 		printf("\n");
 	}
+	
 	printf("%*s",22," ");
 	printf("|----------------------------------|\n");
 	printf("%*s",22," ");
