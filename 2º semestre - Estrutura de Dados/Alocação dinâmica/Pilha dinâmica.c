@@ -50,6 +50,9 @@ void remover(Pilha *pilha)
    if ((pilha->next == NULL) || (inicio == NULL))
    {
       printf("Pilha vazia!");
+   } else if ((inicio->next == NULL) && (topo == NULL)) {
+      free(inicio);
+      inicio= NULL;
    } else {
       Pilha *ultimaPos= inicio,
       *penultimaPosicao= NULL;
