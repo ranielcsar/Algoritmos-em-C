@@ -2,7 +2,7 @@
    Pilha dinâmica. Pode ter o tamanho que quiser!
    Raniel César (ranoob) - 14/02/2018
 
-   Apenas funções básicas como inserir, remover e exibir. Mais pra frente adicionarei a opção de ordenar
+   Apenas funções básicas como inserir, remover e exibir. Mais pra frente adicionarei a opção de ordenar.
 */
 
 #include <stdio.h>
