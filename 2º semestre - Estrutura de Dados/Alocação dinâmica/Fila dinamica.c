@@ -1,7 +1,7 @@
 /*
 
-   Fila diânimca.
-   Raniel César -> 08/03/2018
+   Fila diÃ¢nimca.
+   Raniel CÃ©sar -> 08/03/2018
 
 */
 
@@ -32,7 +32,7 @@ void insere(int valor)
       fim= aux;
    }
 
-   fim->next= aux; // liga o último elemento ao aux, que é o novo espaço
+   fim->next= aux; // liga o Ãºltimo elemento ao aux, que Ã© o novo espaÃ§o
    fim= aux;
    aux->next= NULL; // fim da fila
 
@@ -61,7 +61,7 @@ void remover()
 {
    if (inicio == NULL)
    {
-      printf("Pilha vazia!");
+      printf("Fila vazia!");
    } else {
       aux= inicio; // recebe primeiro elemento
       inicio= inicio->next;
@@ -102,7 +102,7 @@ void valorMedio()
 
    media= somaValores/contaElementos;
 
-   printf("Valor médio da fila: %d", media);
+   printf("Valor mÃ©dio da fila: %d", media);
 }
 
 void valoresPar()
@@ -126,7 +126,7 @@ void mostraValor()
    int valorUsuario, contador= 0;
    aux= inicio;
 
-   printf("Digite o valor que você quer saber quantas vezes se repetiu: ");
+   printf("Digite o valor que vocÃª quer saber quantas vezes se repetiu: ");
    scanf("%d", &valorUsuario);
 
    while (aux != NULL)
@@ -140,7 +140,7 @@ void mostraValor()
    }
    
    printf("\n");
-   printf("O número digitado apareceu %d vezes!", contador);
+   printf("O nÃºmero digitado apareceu %d vezes!", contador);
 }
 
 void filaInvertida()
@@ -191,7 +191,7 @@ void menu()
       printf(" 2 - EXIBIR \n");
       printf(" 3 - REMOVER ELEMENTO \n");
       printf(" 4 - ESVAZIAR \n");
-      printf(" 5 - VALOR MÉDIO \n");
+      printf(" 5 - VALOR MÃ‰DIO \n");
       printf(" 6 - VALORES PARES \n");
       printf(" 7 - MOSTRAR QUANTAS VEZES VALOR APARECE \n");
       printf(" 8 - CRIAR SEGUNDA FILA COM ELEMENTOS INVERTIDOS \n");
