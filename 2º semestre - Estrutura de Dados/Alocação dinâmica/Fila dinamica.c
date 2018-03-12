@@ -10,7 +10,7 @@
 #include <locale.h>
 
 typedef struct fila {
-   int elemento;
+   int info;
    struct fila *next;
 } Fila;
 
@@ -24,7 +24,7 @@ int contaElementos= 0;
 void insere(int valor)
 {
    aux= alocaMemoria();
-   aux->elemento= valor;
+   aux->info= valor;
 
    if ((inicio == NULL) && (fim == NULL)) // primeiro elemento
    {
@@ -51,7 +51,7 @@ void exibe()
 
       while (aux != NULL)
       {
-         printf("%d ", aux->elemento);
+         printf("%d ", aux->info);
          aux= aux->next;
       }
    }
@@ -96,13 +96,13 @@ void valorMedio()
 
    while (aux != NULL)
    {
-      somaValores+= aux->elemento;
+      somaValores+= aux->info;
       aux= aux->next;
    }
 
    media= somaValores/contaElementos;
 
-   printf("Valor médio da fila: %d", media);
+   printf("Valor medio da fila: %d", media);
 }
 
 void valoresPar()
@@ -112,9 +112,9 @@ void valoresPar()
    printf("Valores pares da fila -> ");
    while (aux != NULL)
    {
-      if (aux->elemento % 2 == 0)
+      if (aux->info % 2 == 0)
       {
-         printf("%d ", aux->elemento);
+         printf("%d ", aux->info);
       }
 
       aux= aux->next;
@@ -131,7 +131,7 @@ void mostraValor()
 
    while (aux != NULL)
    {
-      if (aux->elemento == valorUsuario)
+      if (aux->info == valorUsuario)
       {
          contador++;
       }
@@ -140,7 +140,7 @@ void mostraValor()
    }
    
    printf("\n");
-   printf("O número digitado apareceu %d vezes!", contador);
+   printf("O numero digitado apareceu %d vezes!", contador);
 }
 
 void filaInvertida()
@@ -161,7 +161,7 @@ void filaInvertida()
 
    for (i= contador-1; i >= 0; i--)
    {
-      vetor_paraInverter[i]= aux->elemento;
+      vetor_paraInverter[i]= aux->info;
       aux= aux->next;
    }
 
