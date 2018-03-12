@@ -36,14 +36,13 @@ void criaNovo(int valor)
 
 void insere(Lista *lista, int valor) { lista->info= valor; }
 
-
 void exibir()
 {
    aux= primeiro;
 
    if (primeiro == NULL)
    {
-       printf("Sua lista está vazia!");
+       printf("Sua lista estÃ¡ vazia!");
    } else {
        printf("Elementos da lista -> ");
 
@@ -83,15 +82,15 @@ void ordena()
       }
    }
 
-  for (i= 0; i < contaElementos; i++) // religa todos os endereços
+  for (i= 0; i < contaElementos; i++) // religa todos os endereÃ§os
   {
      ordena[i]->next= ordena[i + 1];
 
-     if (i  == contaElementos - 1) // quando chegar ao último elemento
+     if (i  == contaElementos - 1) // quando chegar ao Ãºltimo elemento
       ordena[i]->next= NULL; // aponta para NULL
   }
 
-  primeiro= ordena[0]; // aponta para a primeira posição do vetor que ordena
+  primeiro= ordena[0]; // aponta para a primeira posiÃ§Ã£o do vetor que ordena
 }
 
 
