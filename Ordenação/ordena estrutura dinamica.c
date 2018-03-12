@@ -56,41 +56,42 @@ void exibir()
 
 void ordena()
 {
-   Lista *indice;
    int i= 0, j;
-   Lista *ordena[contaElementos];
+   Lista *indice= primeiro;
+   Lista *vetorLista[contaElementos]; // vetor usado para ordenar
    Lista *auxiliar;
 
-   indice= primeiro; // recebe primeiro elemento da lista
-
+   // passa todos os elementos para o vetor
    while (indice != NULL)
    {
-      ordena[i]= indice;
+      vetorLista[i]= indice;
       indice= indice->next;
       i++;
    }
 
+   // ordena o vetor
    for (i= 0; i < contaElementos; i++) {
       for (j= i+1; j < contaElementos; j++)
       {
-         if (ordena[i]->info > ordena[j]->info)
+         if (vetorLista[i]->info > vetorLista[j]->info)
          {
-            auxiliar= ordena[i];
-            ordena[i]= ordena[j];
-            ordena[j]= auxiliar;
+            auxiliar= vetorLista[i];
+            vetorLista[i]= vetorLista[j];
+            vetorLista[j]= auxiliar;
          }
       }
    }
 
-  for (i= 0; i < contaElementos; i++) // religa todos os endereÃ§os
+   // religa todos os endereços
+  for (i= 0; i < contaElementos; i++)
   {
-     ordena[i]->next= ordena[i + 1];
+     vetorLista[i]->next= vetorLista[i + 1];
 
-     if (i  == contaElementos - 1) // quando chegar ao Ãºltimo elemento
-      ordena[i]->next= NULL; // aponta para NULL
+     if (i  == contaElementos - 1) // quando chegar ao último elemento
+      vetorLista[i]->next= NULL; // aponta para NULL
   }
 
-  primeiro= ordena[0]; // aponta para a primeira posiÃ§Ã£o do vetor que ordena
+  primeiro= vetorLista[0]; // aponta para a primeira posição do vetor que ordena
 }
 
 
