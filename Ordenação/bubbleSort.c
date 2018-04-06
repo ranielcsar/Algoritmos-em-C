@@ -1,52 +1,61 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#define max 10
 
-int* ordenacaoBolha(int num[]) //Bubble sort
-{
-	int i, j, troca;
-	static int x[30];
-	
-	for (i=0; i<10; i++){
-		for (j=i+1; j<10; j++)
-		{
-			if (num[i] > num[j])
-			{
-				troca=num[i]; //Guarda o valor de i, que é maior que j, para ser trocado
-				num[i]=num[j]; //"num", na posição i, recebe o "num" da posição j
-				num[j]=troca; //o número guardado passa para a posição do num[j]									
-			}
-		}
-		x[i]=num[i];
-	}
-	
-	return x;	
+void preencheVetor();
+void ordena();
+void exibe();
+
+
+main() {
+   srand(time(NULL));
+   int vetor[max];
+   preencheVetor(vetor);
 }
 
-int main()
+void preencheVetor(int vetor[])
 {
-	setlocale(LC_ALL,"");
-	int i, num[10];
-	int *bubble;
-	
-	srand(time(NULL));
-	
-	printf("Números desordenados > ");
-	
-	for (i=0; i<10; i++)
-	{
-		num[i]=rand()%10;
-		printf("%d ",num[i]);
-	}
-	printf("\n\n");
-	
-	printf("Números ordenados > ");
-	
-	bubble=ordenacaoBolha(num);
-	
-	for (i=0; i<10; i++)
-	{
-		printf("%d ", *(bubble + i));
-	}
-	
+   int i;
+   
+   for (i= 0; i < max; i++)
+      vetor[i]= rand()%20;
+      
+   printf("Vetor sem ordenar > ");
+   for (i= 0; i < max; i++)
+      printf("%d ", vetor[i]);
+      
+   ordena(vetor);
+}
+
+void ordena(int vetor[])
+{
+   int i, j;
+   int auxiliar;
+    
+    for (i= 0; i < max; i++) {
+        for (j= 0; j < max; j++)
+        {
+            if (vetor[i] < vetor[j])
+            {
+                auxiliar= vetor[i]; // Guarda valor da posição [i] na auxiliar
+                vetor[i]= vetor[j]; // Joga o valor de [j] na posição [i]
+                vetor[j]= auxiliar; // Valor da posição [j] recebe a auxiliar,
+		    		    // que recebeu o valor de [i] na 1ª linha
+            }
+        }
+    }
+    
+    exibe(vetor);
+}
+
+void exibe(int vetor[])
+{
+   int i;
+   
+   printf("\n\n");
+   
+   printf("Vetor ordenado > ");   
+   for (i= 0; i < max; i++)
+      printf("%d ", vetor[i]);
 }
