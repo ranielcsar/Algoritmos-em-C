@@ -1,3 +1,12 @@
+/*
+
+      Raniel César (ranoob) - Ordenação Bolha (Bubble Sort)
+      06. abr. 2018. 
+
+
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
@@ -38,10 +47,9 @@ void ordena(int vetor[])
         {
             if (vetor[i] < vetor[j])
             {
-                auxiliar= vetor[i]; // Guarda valor da posição [i] na auxiliar
-                vetor[i]= vetor[j]; // Joga o valor de [j] na posição [i]
-                vetor[j]= auxiliar; // Valor da posição [j] recebe a auxiliar,
-		    		    // que recebeu o valor de [i] na 1ª linha
+                auxiliar= vetor[i];
+                vetor[i]= vetor[j];
+                vetor[j]= auxiliar;
             }
         }
     }
