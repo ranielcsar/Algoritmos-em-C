@@ -11,7 +11,7 @@
 #include <locale.h>
 #define max 10
 
-void preencheVetor();
+void preenche();
 void ordena();
 void exibe();
 
@@ -19,10 +19,11 @@ void exibe();
 main() {
    srand(time(NULL));
    int vetor[max];
-   preencheVetor(vetor);
+   preenche(vetor);
 }
 
-void preencheVetor(int vetor[])
+
+void preenche(int vetor[])
 {
    int i;
    
