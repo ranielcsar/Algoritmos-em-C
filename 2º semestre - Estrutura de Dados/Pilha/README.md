@@ -92,4 +92,4 @@ void esvaziaPilha(pilha *p)
 }
 ```
 
-- [Pilha](https://github.com/ranielcsar/Algoritmos-em-C/blob/master/Estrutura%20de%20Dados/Pilha/Pilha%20est%C3%A1tica.c "Código fonte")
+- [Pilha](https://github.com/ranielcsar/Algoritmos-em-C/blob/master/2%C2%BA%20semestre%20-%20Estrutura%20de%20Dados/Pilha/Pilha%20est%C3%A1tica.c "Código fonte")
