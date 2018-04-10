@@ -1,6 +1,6 @@
 /*
 
-      Raniel CÃ©sar (ranoob) - OrdenaÃ§Ã£o Bolha (Bubble Sort)
+      Raniel César (ranoob) - Ordenação Bolha (Bubble Sort)
       06 abr. 2018. 
 
 */
@@ -47,9 +47,9 @@ void ordena(int vetor[])
         {
             if (vetor[i] < vetor[j])
             {
-                auxiliar= vetor[i];
-                vetor[i]= vetor[j];
-                vetor[j]= auxiliar;
+                auxiliar= vetor[i]; // auxiliar guarda valor da posição [i] do vetor
+                vetor[i]= vetor[j]; // a posição [i] agora recebe o valor da posição [j]
+                vetor[j]= auxiliar; // a posição [j] recebe o valor que está na auxiliar
             }
         }
     }
