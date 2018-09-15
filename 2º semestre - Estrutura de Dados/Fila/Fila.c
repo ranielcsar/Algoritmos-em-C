@@ -17,8 +17,8 @@ void iniciaFila(Fila *fila)
     fila-> fim = -1;
 }
 
-void inserir(Fila *fila) {
-    
+void inserir(Fila *fila)
+{    
    //Falso cheio
    if ((fila->fim == tamanho-1) && (fila->comeco =! 0))
    {
@@ -46,8 +46,7 @@ void inserir(Fila *fila) {
 }
 
 void excluir(Fila *fila)
-{
-    
+{    
     if (fila->fim < fila->comeco)
     {
         printf("Fila vazia! \n");
