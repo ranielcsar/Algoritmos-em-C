@@ -20,13 +20,13 @@ void iniciaFila(Fila *fila)
 void inserir(Fila *fila)
 {    
    //Falso cheio
-   if ((fila->fim == tamanho-1) && (fila->comeco =! 0))
+   if ((fila->fim == tamanho - 1) && (fila->comeco =! 0))
    {
       fila-> comeco = 0;
       fila-> fim = -1;
    }
     
-   if (fila->fim > tamanho-1)
+   if (fila->fim > tamanho - 1)
    {
         printf("Fila cheia! \n");
    } else {
@@ -104,6 +104,7 @@ void maiorMedia(Fila *fila)
 void primeiroElemento(Fila *fila)
 {    
     printf("Primeiro elemento da fila > \n\n");
+	
     printf("Matrícula: %d \n", fila->matricula[fila->comeco]);
     printf("Nota do trabalho: %.1f \n", fila->notaTrabalho[fila->comeco]);
     printf("Nota da prova: %.1f \n", fila->notaProva[fila->comeco]);
@@ -119,8 +120,7 @@ main()
     
     iniciaFila(&fila);
     
-    escolha = menu();
-    
+    escolha = menu();    
     
    do 
    {        
@@ -154,8 +154,7 @@ main()
 }
 
 int menu()
-{
-	
+{	
 	int escolha;
 	
    printf("                ( \n");
