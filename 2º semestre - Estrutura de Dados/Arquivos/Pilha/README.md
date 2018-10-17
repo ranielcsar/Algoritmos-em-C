@@ -1,4 +1,5 @@
-### Pilha
+<h1 align="center">PILHA</h1>
+
 
 - A pilha tem esse nome porque utilizamos a mesma ideia de vários objetos empilhados.
    - Como por exemplo uma pilha de livros.
@@ -32,29 +33,33 @@ Para chegarmos ao 4º elemento, por exemplo, devemos tirar de um por um até che
 ### Código com exemplo básico de adicionar e remover
 
 
-- Primeiramente inicia-se uma estrutura (struct) que vai servir como pilha
+- Primeiramente inicia-se uma estrutura (struct) que vai servir como pilha.
+
+A variavel **topo** servirá como indíce [i]. Ela que vai ser incrementada ou decrementada. O vetor **elementos** vai ser usado para guardar os elementos da nossa
 
 ```C
 typedef struct
 {
-   int topo; // Esta variavel servirá como indíce [i]. Ela que vai ser incrementada ou decrementada.
-   int elementos[10]; //Vetor que irá guardar elementos
+   int topo;
+   int elementos[10];
 } pilha;
 ```
 
 - Após isso iremos iniciar nossa pilha
 
+O ponteiro **pilha** que está como parâmetro da função (parâmetro é o que está dentro dos parênteses), será usado para referenciar nossa *struct* do tipo pilha.
+
 ```C
-void criaPilha(pilha *p) //*p será o ponteiro que irá direcionar todas as funções para a struct "pilha"
+void criaPilha(Pilha *pilha)
 {
-   p->topo= 0; //Inicia a posição em 0
+   pilha->topo = 0; // inicia a posição em 0
 }
 ```
 
 - Como ainda é uma pilha estática, precisamos sempre verificar se ela já está cheia. No exemplo, o máximo que ela ocupa são 10 espaços, então, será a seguinte condição:
 
 ```C
-if (p-> topo > 10) 
+if (pilha->topo > 10) 
 {
    printf("Pilha cheia! \n);
 }
@@ -63,16 +68,15 @@ if (p-> topo > 10)
 - Caso não esteja cheia, você pode adicionar mais elementos
 
 ```C
-void preenchePilha(pilha *p, dado)
+void preenchePilha(Pilha *pilha, dado)
 {
-    if (p-> topo > 10) 
+    if (pilha->topo > 10) 
     {
         printf("Pilha cheia! \n);
-    } else
-    {
-        p->nota[p->topo]= dado; //no momento a variável topo é 0, então, será adicionado o elemento na posição 0.
-        p->topo++; /*Incrementa índice para mudar a posição.
-		   Após isso, você terá uma nova posição para ser preenchida.*/
+    } else {
+        pilha-> nota[pilha->topo] = dado; // no momento a variável topo é 0, então, será adicionado o elemento na posição 0.
+        pilha-> topo++; // incrementa índice para mudar a posição.
+		        // após isso, você terá uma nova posição para ser preenchida.
     }
 }
 ```
@@ -80,16 +84,13 @@ void preenchePilha(pilha *p, dado)
 - Já no momento de remover o elemento, verificamos se a pilha está vazia, caso contrário, decrementamos o topo.
 
 ```C
-void esvaziaPilha(pilha *p)
+void esvaziaPilha(Pilha *pilha)
 {
-   if (p-> topo < 0)
+   if (pilha-> topo < 0)
    {
-      printf("Pilha já vazia! \n");
-   } else 
-   {
-      p-> topo--;
+      printf("A pilha já está vazia! \n");
+   } else {
+      pilha-> topo--;
    }
 }
 ```
-
-- [Pilha](https://github.com/ranielcsar/Algoritmos-em-C/blob/master/2%C2%BA%20semestre%20-%20Estrutura%20de%20Dados/Pilha/Pilha%20est%C3%A1tica.c "Código fonte")

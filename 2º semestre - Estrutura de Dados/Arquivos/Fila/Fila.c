@@ -2,159 +2,159 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <math.h>
-#define X 9
+#define tamanho 9
 
 typedef struct {
-	int comeco, fim;
-	int matricula[X];
-	float notaTrab[X], notaProva[X];
-	float media[X];
+    int comeco, fim;
+    int matricula[tamanho];
+    float notaTrabalho[tamanho], notaProva[tamanho];
+    float media[tamanho];
 } Fila;
 
-void iniciaFila(Fila *f) {	
-	f-> comeco= 0;
-	f-> fim= -1;
+void iniciaFila(Fila *fila)
+{  
+    fila-> comeco = 0;
+    fila-> fim = -1;
 }
 
-void inserir(Fila *f) {
-	
+void inserir(Fila *fila)
+{    
    //Falso cheio
-   if ((f->fim == X-1) && (f->comeco =! 0))
+   if ((fila->fim == tamanho - 1) && (fila->comeco =! 0))
    {
-      f-> comeco= 0;
-      f-> fim= -1;
+      fila-> comeco = 0;
+      fila-> fim = -1;
    }
-	
-   if (f->fim > X-1)
+    
+   if (fila->fim > tamanho - 1)
    {
-   	printf("Fila cheia! \n");
-   } else
-   {
-		f-> fim++;
-		
-		printf("Entre com a matrícula do aluno: ");
-		scanf("%d", &f->matricula[f->fim]);	
-		
-		printf("Entre com a nota do trabalho do aluno: ");
-		scanf("%f", &f->notaTrab[f->fim]);
-		
-		printf("Entre com a nota da prova do aluno: ");
-		scanf("%f", &f->notaProva[f->fim]);
-	}
-	
-	printf("Adicionado!");
+        printf("Fila cheia! \n");
+   } else {
+        fila-> fim++;
+        
+        printf("Entre com a matrícula do aluno: ");
+        scanf("%d", &fila->matricula[fila->fim]); 
+        
+        printf("Entre com a nota do trabalho do aluno: ");
+        scanf("%f", &fila->notaTrabalho[fila->fim]);
+        
+        printf("Entre com a nota da prova do aluno: ");
+        scanf("%f", &fila->notaProva[fila->fim]);
+    }
+    
+    printf("Adicionado!");
 }
 
-void excluir(Fila *f) {
-	
-	if (f->fim < f->comeco)
-	{
-		printf("Fila vazia! \n");
-	} else
-	{
-		f->comeco++;
-		
-		printf("Excluído! \n");
-	}
+void excluir(Fila *fila)
+{    
+    if (fila->fim < fila->comeco)
+    {
+        printf("Fila vazia! \n");
+    } else {
+        fila->comeco++;
+        
+        printf("Excluído! \n");
+    }
 }
 
-void exibir(Fila *f) {
-	
-	int i;
-	float media;
-	
-	for (i=0; i<f->fim; i++)
-	{
-		printf("Matrícula: %d \n", f->matricula[i]);
-		printf("Nota do trabalho: %.1f \n", f->notaTrab[i]);
-		printf("Nota da prova: %.1f \n", f->notaProva[i]);
-		
-		f-> media[i]= (f->notaTrab[i] + f->notaProva[i])/2;
-		
-		printf("Média: %.1f \n\n", media);
-		
-		if (f->media[i] >= 7)
-		{
-			printf("> APROVADO < \n\n");
-		} else
-		{
-			printf("> REPROVADO < \n\n");
-		}
-	}
+void exibir(Fila *fila) 
+{    
+    int i;
+    float media;
+    
+    for (i = 0; i < fila->fim; i++)
+    {
+        printf("Matrícula: %d \n", fila->matricula[i]);
+        printf("Nota do trabalho: %.1f \n", fila->notaTrabalho[i]);
+        printf("Nota da prova: %.1f \n", fila->notaProva[i]);
+        
+        fila->media[i] = (fila->notaTrabalho[i] + fila->notaProva[i]) / 2;
+        
+        printf("Média: %.1f \n\n", media);
+        
+        if (fila->media[i] >= 7)
+        {
+            printf("> APROVADO < \n\n");
+        } else {
+            printf("> REPROVADO < \n\n");
+        }
+    }
 }
 
-void maiorMedia(Fila *f) {
-	
-	int maior, posicao;
-	int i;
-	
-	maior= f->media[0];
-	
-	for (i=0; i<f->fim; i++)
-	{
-		if (f->media[i] > maior)
-		{
-			maior= f->media[i];
-			posicao= i;
-		}
-	}
-	
-	printf("Matricula com maior média: %d \n", f->matricula[posicao]);
-	printf("Média: %.1f", f-> media[posicao]);
+void maiorMedia(Fila *fila)
+{    
+    int maior, posicao;
+    int i;
+    
+    maior = fila->media[0];
+    
+    for (i = 0; i < fila->fim; i++)
+    {
+        if (fila->media[i] > maior)
+        {
+            maior = fila->media[i];
+            posicao = i;
+        }
+    }
+    
+    printf("Matricula com maior média: %d \n", fila->matricula[posicao]);
+    printf("Média: %.1f", fila-> media[posicao]);
 }
 
-void primeiroElemento(Fila *f) {
+void primeiroElemento(Fila *fila)
+{    
+    printf("Primeiro elemento da fila > \n\n");
 	
-	printf("Primeiro elemento da fila > \n\n");
-	printf("Matrícula: %d \n", f->matricula[f->comeco]);
-	printf("Nota do trabalho: %.1f \n", f->notaTrab[f->comeco]);
-	printf("Nota da prova: %.1f \n", f->notaProva[f->comeco]);
+    printf("Matrícula: %d \n", fila->matricula[fila->comeco]);
+    printf("Nota do trabalho: %.1f \n", fila->notaTrabalho[fila->comeco]);
+    printf("Nota da prova: %.1f \n", fila->notaProva[fila->comeco]);
 }
 
-main() {
-	setlocale(LC_ALL,"");
-	
-	Fila fila;
-	
-	int escolha;
-	
-	iniciaFila(&fila);
-	
-	escolha= menu();
-	
-	
-   do {
-		
-		switch (escolha)
-		{
-			case 1:
-				inserir(&fila);
-				break;
-			case 2:
-				excluir(&fila);
-				break;
-			case 3:
-				exibir(&fila);
-				break;
-			case 4:
-				maiorMedia(&fila);
-				break;
-			case 5:
-				primeiroElemento(&fila);
-				break;
-			default:
-				break;
-		}
-		printf("\n");		
-		system("pause");
-		system("cls");
-		escolha= menu();
-		
-	} while (escolha != 0);
+main()
+{
+    setlocale(LC_ALL,"");
+    
+    Fila fila;
+    
+    int escolha;
+    
+    iniciaFila(&fila);
+    
+    escolha = menu();    
+    
+   do 
+   {        
+        switch (escolha)
+        {
+            case 1:
+                inserir(&fila);
+                break;
+            case 2:
+                excluir(&fila);
+                break;
+            case 3:
+                exibir(&fila);
+                break;
+            case 4:
+                maiorMedia(&fila);
+                break;
+            case 5:
+                primeiroElemento(&fila);
+                break;
+            default:
+                break;
+        }
+
+        printf("\n");       
+        system("pause");
+        system("cls");
+        escolha = menu();
+        
+    } while (escolha != 0);
 }
 
-int menu() {
-	
+int menu()
+{	
 	int escolha;
 	
    printf("                ( \n");
