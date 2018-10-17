@@ -35,7 +35,7 @@ Para chegarmos ao 4º elemento, por exemplo, devemos tirar de um por um até che
 
 - Primeiramente inicia-se uma estrutura (struct) que vai servir como pilha.
 
-A variavel **topo** servirá como indíce [i]. Ela que vai ser incrementada ou decrementada. O vetor **elementos** vai ser usado para guardar os elementos da nossa
+A variavel **topo** servirá como indíce [i]. Ela que vai ser incrementada ou decrementada. O vetor **elementos** vai ser usado para guardar os elementos da nossa pilha.
 
 ```C
 typedef struct
