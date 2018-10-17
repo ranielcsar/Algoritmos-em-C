@@ -1,5 +1,4 @@
 <h1 align="center"> LISTA </h1>
-___
 
 - Ao contrário de pilha e da fila, a lista não tem um lugar específico para adicionar elemento ou remover. Quem diz isso é o usuário
 
