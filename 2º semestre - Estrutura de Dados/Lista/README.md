@@ -1,4 +1,5 @@
-### Lista
+<h1 align="center"> LISTA </h1>
+___
 
 - Ao contrário de pilha e da fila, a lista não tem um lugar específico para adicionar elemento ou remover. Quem diz isso é o usuário
 
@@ -38,9 +39,9 @@ typedef struct
 Iniciamos a lista.
 
 ```C
-void iniciaLista(Lista *L)
+void iniciaLista(Lista *lista)
 {
-    L-> i= 0;
+    lista-> i = 0;
 }
 ```
 
@@ -49,16 +50,15 @@ Na lista você pode inserir tanto no final quanto em qualquer lugar.
 - Inserir no final (sempre verificando se a lista já está cheia)
 
 ```C
-void inserirNoFinal(Lista *L)
+void inserirNoFinal(Lista *lista)
 {
-    if (L->i > max-1)
+    if (lista->i > max - 1)
     {
         printf("Lista cheia! \n");
-    } else
-    {
+    } else {
         printf("Número da matrícula: ");
-        scanf("%d", &L-> elementos[L-> i]);		
-        L-> i++;
+        scanf("%d", &lista-> elementos[lista-> i]);		
+        lista-> i++;
     }	
 }
 ```
@@ -66,7 +66,7 @@ void inserirNoFinal(Lista *L)
 - Inserir um novo elemento em qualquer lugar
 
 ```C
-void inserirNovo(Lista *L)
+void inserirNovo(Lista *lista)
 {
     int posicao;
     int i;
@@ -75,24 +75,23 @@ void inserirNovo(Lista *L)
     scanf("%d", &posicao);
     printf("\n");
 
-    if (posicao > max-1)
+    if (posicao > max - 1)
     {
         printf("Opção inválida!\n");
-    } else
-    {    
-        L->i++; //Incrementa para criar uma posição vazia no final
+    } else {    
+        lista-> i++; // incrementa para criar uma posição vazia no final
 
-        //Usado para deslocar os elementos para frente e abrir espaço para o novo elemento que vai ser inserido
-        for (i=max-1; i>posicao; i--)
+        // usado para deslocar os elementos para frente e abrir espaço para o novo elemento que vai ser inserido
+        for (i = max - 1; i > posicao; i--)
         {
-            if (L->i < max-1)
+            if (lista->i < max - 1)
             {			
-               L[i+1]= L[i];
+               lista[i + 1] = lista[i];
             }			
         }
 
         printf("Elemento: ");
-        scanf("%d", &L->elemento[posicao-1]); //Posição -1 pois caso a pessoa digite 2, será a posição 1 do vetor (0, 1 [posição 2])		
+        scanf("%d", &lista->elemento[posicao - 1]); // posição -1 pois caso a pessoa digite 2, será a posição 1 do vetor (0, 1 [posição 2])		
 
         printf("\n\n Adicionado!\n");		
     }
@@ -102,7 +101,7 @@ Para excluir algum elemento do final basta decrementar a variável que está sen
 posição, devemos jogar o elemento a ser excluido para o final e reorganizar os demais.
 
 ```C
-void excluirPosicao(Lista *L)
+void excluirPosicao(Lista *lista)
 {
 
     int remover;
@@ -111,18 +110,16 @@ void excluirPosicao(Lista *L)
     printf("Entre com a posição que deseja remover: ");
     scanf("%d", &remover);
 
-    remover--; //Mesma lógica do "posicao-1"
+    remover--; // mesma lógica do "posicao - 1"
 
-    //[i] começa na posição de remover e vai até o indice
-    for (i=remover; i<L->indice; i++)
+    // [i] começa na posição de remover e vai até o indice
+    for (i = remover; i < lista->indice; i++)
     {		
-      L-> num[i]= L-> num[i+1]; //Deslocando elemento a ser removido até o final
+      	lista-> num[i] = lista-> num[i+1]; // deslocando elemento a ser removido até o final
     }
 
-    L-> indice--; //Decrementa o indice para deletar o elemento
+    lista-> indice--; // decrementa o indice para deletar o elemento
 
     printf("Posição removida! \n");
 }
 ```
-
-- [Lista](https://github.com/ranielcsar/Algoritmos-em-C/blob/master/Estrutura%20de%20Dados/Lista/lista.h "Código fonte")
