@@ -47,7 +47,7 @@ typedef struct
 
 - Após isso iremos iniciar nossa pilha
 
-O ponteiro **pilha** que está como parâmetro da função (parâmetro é o que está dentro dos parênteses), será usado para refernciar nosso *struct* do tipo pilha.
+O ponteiro **pilha** que está como parâmetro da função (parâmetro é o que está dentro dos parênteses), será usado para referenciar nossa *struct* do tipo pilha.
 
 ```C
 void criaPilha(Pilha *pilha)
