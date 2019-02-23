@@ -1,9 +1,9 @@
 /*
 
-   Pilha dinâmica. Pode ter o tamanho que quiser!
-   Raniel César (ranoob) - 10/03/2018
+   Pilha dinÃ¢mica. Pode ter o tamanho que quiser!
+   Raniel CÃ©sar (ranoob) - 10/03/2018
 
-   Apenas funções básicas como inserir, remover, exibir e ordenar;
+   Apenas funÃ§Ãµes bÃ¡sicas como inserir, remover, exibir e ordenar;
    
 */
 
@@ -18,26 +18,27 @@ typedef struct pilha {
    struct pilha *next;
 } Pilha;
 
-Pilha *alocaMemoria() { return (Pilha*)malloc(sizeof(Pilha)); }
+Pilha *alocaMemoria() { return (Pilha*)malloc(sizeof(Pilha)); } // retorna um espaÃ§o de memÃ³ria do tamanho da struct Pilha
 
-Pilha *inicio= NULL;
-Pilha *topo= NULL;
-Pilha *aux= NULL;
+// variÃ¡veis que podem ser usadas em todo cÃ³digo (globais)
+Pilha *inicio = NULL;
+Pilha *topo = NULL;
+Pilha *aux = NULL;
 int contaElementos= 0;
 
 void cria_novoNo()
 {
    if (inicio == NULL)
    {
-      inicio= alocaMemoria();
-      inicio->next= NULL;
-      aux= inicio;
+      inicio = alocaMemoria();
+      inicio->next = NULL;
+      aux = inicio;
       inserir(inicio);
    } else {
-      topo= alocaMemoria();
-      topo->next= NULL;
-      aux->next= topo; // liga o topo com o elemento anterior
-      aux= topo; // passa topo para auxiliar para não inserir 'por cima'
+      topo = alocaMemoria();
+      topo->next = NULL;
+      aux->next = topo; // liga o topo com o elemento anterior
+      aux = topo; // passa topo para auxiliar para nÃ£o inserir 'por cima'
       inserir(topo);
    }
    
@@ -46,7 +47,7 @@ void cria_novoNo()
 
 void inserir(Pilha *pilha)
 {
-   printf("Entre com o número: ");
+   printf("Entre com o nÃºmero: ");
    scanf("%d", &pilha->numero);
 }
 
@@ -57,78 +58,39 @@ void remover(Pilha *pilha)
       printf("Pilha vazia!");
    } else if ((inicio->next == NULL) && (topo == NULL)) {
       free(inicio);
-      inicio= NULL;
+      inicio = NULL;
    } else {
-      Pilha *ultimaPos= inicio,
-      *penultimaPosicao= NULL;
+      Pilha *ultimaPos = inicio,
+      *penultimaPosicao = NULL;
 
       while (ultimaPos->next != NULL)
       {
-         penultimaPosicao= ultimaPos; //recebe valor anterior ao da última posição
-         ultimaPos= ultimaPos->next; //usado para mudar posição
+         penultimaPosicao = ultimaPos; // recebe valor anterior ao da Ãºltima posiÃ§Ã£o
+         ultimaPos = ultimaPos->next; // usado para mudar posiÃ§Ã£o
       }
 
-      penultimaPosicao->next= NULL; //ao sair do loop, a penultima posição aponta para null
-      free(ultimaPos); //libera a memória
+      penultimaPosicao->next = NULL; // ao sair do loop, a penultima posiÃ§Ã£o aponta para null
+      free(ultimaPos); // libera a memÃ³ria
    }
 }
 
 void exibe()
 {
-   Pilha *indice= inicio;
+   Pilha *indice = inicio; // primeiro elemento da pilha
 
    if (indice == NULL)
    {
-      printf("Sua lista não tem elementos a serem mostrados!");
+      printf("Sua lista nÃ£o tem elementos a serem mostrados!");
    } else {
-      printf("Números > ");
+      printf("NÃºmeros > ");
 
       while (indice != NULL)
       {
          printf("%d ", indice->numero);
-         indice= indice->next;
+         indice = indice->next;
       }
    }
 }
-
-void ordenar()
-{
-    int vetorOrdem[contaElementos];
-    int i, j;
-    itn auxiliar;
-
-    aux= inicio;
-
-    for (i= 0; i < contaElementos; i++)
-    {
-        vetorOrdem[i]= aux->salario;
-        aux= aux->next;
-    }
-
-
-    for (i= 0; i < contaElementos; i++) {
-        for (j= i+1; j < contaElementos; j++)
-        {
-            if (vetorOrdem[i] > vetorOrdem[j])
-            {
-                auxiliar= vetorOrdem[i];
-                vetorOrdem[i]= vetorOrdem[j];
-                vetorOrdem[j]= auxiliar;
-            }
-        }
-    }
-
-    i= 0;
-    aux= inicio;
-
-    while (aux != NULL)
-    {
-        aux->salario= vetorOrdem[i];
-        aux= aux->next;
-        i++;
-    }
-}
-
 
 main() {
    setlocale(LC_ALL,"");
@@ -138,8 +100,8 @@ main() {
 
 void menuPrincipal()
 {
-   Pilha *pi;
-   int r;
+   Pilha *pilha;
+   int opcaoMenu;
    
    do
    {
@@ -147,11 +109,11 @@ void menuPrincipal()
       printf(" 2 - EXIBIR \n");
       printf(" 3 - REMOVER ELEMENTO DA PILHA \n");
       printf(" 4 - ORDENAR EM ORDEM CRESCENTE \n");
-      printf(" 5 - SAIR \n"); scanf("%d", &r);
+      printf(" 5 - SAIR \n"); scanf("%d", &opcaoMenu);
 
       printf("\n");
 
-      switch (r)
+      switch (opcaoMenu)
       {
          case 1:
             cria_novoNo();
@@ -160,7 +122,7 @@ void menuPrincipal()
             exibe();
             break;
          case 3:
-            remover(pi);
+            remover(pilha);
             break;
          case 4:
             ordenar();
@@ -169,12 +131,12 @@ void menuPrincipal()
             break;
       }
 
-      if (r != 5)
+      if (opcaoMenu != 5)
       {
          printf("\n\n");
          system("pause");
          system("cls");
       }
 
-   } while (r != 5);
+   } while (opcaoMenu != 5);
 }
