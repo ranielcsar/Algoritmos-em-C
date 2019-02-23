@@ -126,9 +126,6 @@ void menuPrincipal()
          case 3:
             remover(pilha);
             break;
-         case 4:
-            ordenar();
-            break;
          default:
             break;
       }
