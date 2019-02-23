@@ -3,7 +3,9 @@
    Pilha dinâmica. Pode ter o tamanho que quiser!
    Raniel César (ranoob) - 10/03/2018
 
-   Apenas funções básicas como inserir, remover, exibir e ordenar;
+   Apenas funções básicas como inserir, remover e exibir;
+   
+   Revisado: 23 fev. 2019.
    
 */
 
